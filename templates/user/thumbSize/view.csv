@@ -1,0 +1,6 @@
+{* purpose of this template: thumb sizes view csv view in user area *}
+{mediarepositoryTemplateHeaders contentType='text/comma-separated-values; charset=iso-8859-15' asAttachment=true filename='ThumbSizes.csv'}
+"{gt text='Name'}";"{gt text='Width'}";"{gt text='Height'}";"{gt text='Keep aspect ratio'}"
+{foreach item='thumbSize' from=$items}
+    "{$thumbSize.name|replace:"\"":""}";"{$thumbSize.width|replace:"\"":""}";"{$thumbSize.height|replace:"\"":""}";"{$thumbSize.keepAspectRatio|yesno:true}"
+{/foreach}

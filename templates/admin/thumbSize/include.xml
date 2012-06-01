@@ -1,0 +1,8 @@
+{* purpose of this template: thumb sizes xml inclusion template in admin area *}
+<thumbsize id="{$item.id}" createdon="{$item.createdDate|dateformat}" updatedon="{$item.updatedDate|dateformat}">
+    <id>{$item.id}</id>
+    <name><![CDATA[{$item.name}]]></name>
+    <width>{$item.width}</width>
+    <height>{$item.height}</height>
+    <keepAspectRatio>{if !$item.keepAspectRatio}0{else}1{/if}</keepAspectRatio>
+</thumbsize>

@@ -1,0 +1,51 @@
+body {
+    background-color: #ddd;
+    margin: 10px;
+    text-align: left;
+}
+
+.medrepform fieldset,
+.medrepform fieldset legend {
+    background-color: #fff;
+    border: none;
+}
+
+#medrepitemcontainer {
+    background-color: #eee;
+    height: 300px;
+    overflow: auto;
+    padding: 5px;
+}
+
+#medrepitemcontainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#medrepitemcontainer a {
+    color: #000;
+    margin: 0.1em 0.2em;
+    text-decoration: underline;
+}
+#medrepitemcontainer a:hover,
+#medrepitemcontainer a:focus,
+#medrepitemcontainer a:active {
+    color: #900;
+    text-decoration: none;
+}
+
+#medrepitemcontainer a img {
+    border: none;
+}
+
+#medrepitemcontainer a img {
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    padding: 0.5em;
+}
+#medrepitemcontainer a:hover img,
+#medrepitemcontainer a:focus img,
+#medrepitemcontainer a:active img {
+    background-color: #fff;
+}

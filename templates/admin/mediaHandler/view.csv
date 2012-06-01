@@ -1,0 +1,6 @@
+{* purpose of this template: media handlers view csv view in admin area *}
+{mediarepositoryTemplateHeaders contentType='text/comma-separated-values; charset=iso-8859-15' asAttachment=true filename='MediaHandlers.csv'}
+"{gt text='Mime type'}";"{gt text='File type'}";"{gt text='Found mime type'}";"{gt text='Found file type'}";"{gt text='Handler name'}";"{gt text='Title'}";"{gt text='Active'}";"{gt text='Image'}"
+{foreach item='mediaHandler' from=$items}
+    "{$mediaHandler.mimeType|replace:"\"":""}";"{$mediaHandler.fileType|replace:"\"":""}";"{$mediaHandler.foundMimeType|replace:"\"":""}";"{$mediaHandler.foundFileType|replace:"\"":""}";"{$mediaHandler.handlerName|replace:"\"":""}";"{$mediaHandler.title|replace:"\"":""}";"{$mediaHandler.active|yesno:true}";"{$mediaHandler.image}"
+{/foreach}

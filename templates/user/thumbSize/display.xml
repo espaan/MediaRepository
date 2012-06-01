@@ -1,0 +1,4 @@
+{* purpose of this template: thumb sizes display xml view in user area *}
+{mediarepositoryTemplateHeaders contentType='text/xml'}<?xml version="1.0" encoding="{charset}" ?>
+{getbaseurl assign='baseurl'}
+{include file='user/thumbSize/include.xml' item=$thumbSize}

@@ -1,0 +1,25 @@
+{* purpose of this template: media xml inclusion template in user area *}
+<medium id="{$item.id}" createdon="{$item.createdDate|dateformat}" updatedon="{$item.updatedDate|dateformat}">
+    <id>{$item.id}</id>
+    <owner>{usergetvar name='uname' uid=$item.owner}</owner>
+    <title><![CDATA[{$item.title}]]></title>
+    <keywords><![CDATA[{$item.keywords}]]></keywords>
+    <description><![CDATA[{$item.description}]]></description>
+    <description2><![CDATA[{$item.description2}]]></description2>
+    <dateTaken><![CDATA[{$item.dateTaken}]]></dateTaken>
+    <placeTaken><![CDATA[{$item.placeTaken}]]></placeTaken>
+    <notes><![CDATA[{$item.notes}]]></notes>
+    <license><![CDATA[{$item.license}]]></license>
+    <areamap><![CDATA[{$item.areamap}]]></areamap>
+    <showLocation>{if !$item.showLocation}0{else}1{/if}</showLocation>
+    <latitude>{$item.latitude|formatnumber}</latitude>
+    <longitude>{$item.longitude|formatnumber}</longitude>
+    <zoomFactor>{$item.zoomFactor}</zoomFactor>
+    <settings>{$item.settings}</settings>
+    <dlcount>{$item.dlcount}</dlcount>
+    <url>{$item.url}</url>
+    <mediaHandler><![CDATA[{$item.mediaHandler}]]></mediaHandler>
+    <freeType>{$item.freeType}</freeType>
+    <additions>{$item.additions}</additions>
+    <fileUpload{if $item.fileUpload ne ''} extension="{$item.fileUploadMeta.extension}" size="{$item.fileUploadMeta.size}" isImage="{if $item.fileUploadMeta.isImage}true{else}false{/if}"{if $item.fileUploadMeta.isImage} width="{$item.fileUploadMeta.width}" height="{$item.fileUploadMeta.height}" format="{$item.fileUploadMeta.format}"{/if}{/if}>{$item.fileUpload}</fileUpload>
+</medium>

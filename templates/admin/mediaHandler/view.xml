@@ -1,0 +1,9 @@
+{* purpose of this template: media handlers view xml view in admin area *}
+{mediarepositoryTemplateHeaders contentType='text/xml'}<?xml version="1.0" encoding="{charset}" ?>
+<mediaHandlers>
+{foreach item='item' from=$items}
+    {include file='admin/mediaHandler/include.xml'}
+{foreachelse}
+    <noMediaHandler />
+{/foreach}
+</mediaHandlers>
