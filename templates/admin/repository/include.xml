@@ -1,0 +1,31 @@
+{* purpose of this template: repositories xml inclusion template in admin area *}
+<repository id="{$item.id}" createdon="{$item.createdDate|dateformat}" updatedon="{$item.updatedDate|dateformat}">
+    <id>{$item.id}</id>
+    <name><![CDATA[{$item.name}]]></name>
+    <workDirectory><![CDATA[{$item.workDirectory}]]></workDirectory>
+    <storageDirectory><![CDATA[{$item.storageDirectory}]]></storageDirectory>
+    <cacheDirectory><![CDATA[{$item.cacheDirectory}]]></cacheDirectory>
+    <storageMode>{$item.storageMode}</storageMode>
+    <permissionScope>{$item.permissionScope}</permissionScope>
+    <useQuota>{if !$item.useQuota}0{else}1{/if}</useQuota>
+    <allowManagementOfOwnFiles>{if !$item.allowManagementOfOwnFiles}0{else}1{/if}</allowManagementOfOwnFiles>
+    <allowFileMailing>{if !$item.allowFileMailing}0{else}1{/if}</allowFileMailing>
+    <maxSizeForMail>{$item.maxSizeForMail}</maxSizeForMail>
+    <maxFilesPerUpload>{$item.maxFilesPerUpload}</maxFilesPerUpload>
+    <maxUploadFileSize>{$item.maxUploadFileSize}</maxUploadFileSize>
+    <uploadNamingConvention>{$item.uploadNamingConvention}</uploadNamingConvention>
+    <uploadNamingPrefix><![CDATA[{$item.uploadNamingPrefix}]]></uploadNamingPrefix>
+    <enableSharpen>{if !$item.enableSharpen}0{else}1{/if}</enableSharpen>
+    <enableShrinking>{if !$item.enableShrinking}0{else}1{/if}</enableShrinking>
+    <shrinkDimensions>{$item.shrinkDimensions}</shrinkDimensions>
+    <useThumbCropper>{if !$item.useThumbCropper}0{else}1{/if}</useThumbCropper>
+    <cropSizeMode>{$item.cropSizeMode}</cropSizeMode>
+    <defaultTemplateCollection><![CDATA[{$item.defaultTemplateCollection}]]></defaultTemplateCollection>
+    <allowTemplateOverrideCollection>{if !$item.allowTemplateOverrideCollection}0{else}1{/if}</allowTemplateOverrideCollection>
+    <defaultTemplateDetail><![CDATA[{$item.defaultTemplateDetail}]]></defaultTemplateDetail>
+    <allowTemplateOverrideDetail>{if !$item.allowTemplateOverrideDetail}0{else}1{/if}</allowTemplateOverrideDetail>
+    <startPageViewMode>{$item.startPageViewMode}</startPageViewMode>
+    <downloadMode>{$item.downloadMode}</downloadMode>
+    <sendMailAfterUpload>{if !$item.sendMailAfterUpload}0{else}1{/if}</sendMailAfterUpload>
+    <mailRecipient><![CDATA[{$item.mailRecipient}]]></mailRecipient>
+</repository>

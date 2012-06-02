@@ -1,0 +1,8 @@
+{* purpose of this template: media handlers view json view in user area *}
+{mediarepositoryTemplateHeaders contentType='application/json'}
+[
+{foreach item='item' from=$items name='mediaHandlers'}
+    {if not $smarty.foreach.mediaHandlers.first},{/if}
+    {$item->toJson()}
+{/foreach}
+]

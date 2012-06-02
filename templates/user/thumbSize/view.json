@@ -1,0 +1,8 @@
+{* purpose of this template: thumb sizes view json view in user area *}
+{mediarepositoryTemplateHeaders contentType='application/json'}
+[
+{foreach item='item' from=$items name='thumbSizes'}
+    {if not $smarty.foreach.thumbSizes.first},{/if}
+    {$item->toJson()}
+{/foreach}
+]

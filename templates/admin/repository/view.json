@@ -1,0 +1,8 @@
+{* purpose of this template: repositories view json view in admin area *}
+{mediarepositoryTemplateHeaders contentType='application/json'}
+[
+{foreach item='item' from=$items name='repositories'}
+    {if not $smarty.foreach.repositories.first},{/if}
+    {$item->toJson()}
+{/foreach}
+]

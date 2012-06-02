@@ -1,0 +1,3 @@
+{* purpose of this template: repositories display json view in admin area *}
+{mediarepositoryTemplateHeaders contentType='application/json'}
+{$repository->toJson()}

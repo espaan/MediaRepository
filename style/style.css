@@ -1,0 +1,161 @@
+/* view pages */
+div#z-maincontent.z-module-mediarepository table tbody tr td {
+    vertical-align: top;
+}
+
+/* display pages */
+div.mediarepositoryRightBox {
+    float: right;
+    margin: 0 1em;
+    padding: .5em;
+    /*border: 1px solid #666;*/
+}
+
+div.mediarepositoryRightBox h3 {
+    color: #333;
+    font-weight: 400;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 8px;
+}
+
+div.mediarepositoryRightBox p.manageLink {
+    margin-left: 18px;
+}
+.mediarepositoryColourPicker {
+    cursor: pointer;
+}
+/* validation */
+div.z-formrow input.required, div.z-formrow textarea.required {
+    border: 1px solid #00a8e6;
+}
+div.z-formrow input.validation-failed, div.z-formrow textarea.validation-failed {
+    border: 1px solid #f30;
+    color: #f30;
+}
+div.z-formrow input.validation-passed, div.z-formrow textarea.validation-passed {
+    border: 1px solid #0c0;
+    color: #000;
+}
+
+.validation-advice {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #f90;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* edit pages */
+div.medrepRelationLeftSide {
+    float: left;
+    width: 25%;
+}
+
+div.medrepRelationRightSide {
+    float: right;
+    width: 65%;
+}
+
+/* hide legends if z-panels are used as both contain the same labels */
+div.mediarepository-edit .z-panel-content legend {
+    display: none;
+}
+
+div.medrepLiveSearchUser {
+    margin: 0;
+}
+
+
+div.medrepAutoCompleteWrap {
+    position: absolute;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    left: 260px;
+    top: 10px;
+}
+
+div.medrepAutoComplete,
+div.medrepAutoCompleteUser,
+div.medrepAutoCompleteWithImage {
+    position: relative !important;
+    top: 2px !important;
+    left: 0 !important;
+    width: 100px;
+    background-color: #fff;
+    border: 1px solid #888;
+    margin: 0;
+    padding: 0;
+}
+
+div.medrepAutoComplete ul,
+div.medrepAutoCompleteUser ul,
+div.medrepAutoCompleteWithImage ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.medrepAutoComplete ul li,
+div.medrepAutoCompleteUser ul li,
+div.medrepAutoCompleteWithImage ul li {
+    margin: 0;
+    padding: 0.2em 0 0.2em 20px;
+    list-style-type: none;
+    line-height: 1.4em;
+    cursor: pointer;
+    display: block;
+    background-position: 2px 2px;
+    background-repeat: no-repeat;
+}
+
+div.medrepAutoComplete ul li {
+    background-image: url("../../../images/icons/extrasmall/tab_right.png");
+}
+div.medrepAutoCompleteUser ul li {
+    background-image: url("../../../images/icons/extrasmall/user.png");
+}
+div.medrepAutoCompleteWithImage ul li {
+    background-image: url("../../../images/icons/extrasmall/agt_Multimedia.png");
+}
+
+div.medrepAutoComplete ul li.selected,
+div.medrepAutoCompleteUser ul li.selected,
+div.medrepAutoCompleteWithImage ul li.selected {
+    background-color: #ffb;
+}
+
+div.medrepAutoComplete ul li div.itemtitle,
+div.medrepAutoCompleteWithImage ul li div.itemtitle {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.2em;
+}
+div.medrepAutoComplete ul li div.itemdesc,
+div.medrepAutoCompleteWithImage ul li div.itemdesc {
+    font-size: 10px;
+    color: #888;
+}
+
+button.medrepInlineButton {
+    margin-top: 1em;
+}
+
+div.mediarepository-view form.medrepQuickNavForm {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+div.mediarepository-view form.medrepQuickNavForm fieldset {
+    padding: 3px 10px;
+    margin-bottom: 0;
+}
+
+div.mediarepository-view form.medrepQuickNavForm fieldset h3 {
+    margin-top: 0;
+}
+
+div.mediarepository-view form.medrepQuickNavForm fieldset #num {
+    width: 50px;
+    text-align: right;
+}

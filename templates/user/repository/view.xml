@@ -1,0 +1,9 @@
+{* purpose of this template: repositories view xml view in user area *}
+{mediarepositoryTemplateHeaders contentType='text/xml'}<?xml version="1.0" encoding="{charset}" ?>
+<repositories>
+{foreach item='item' from=$items}
+    {include file='user/repository/include.xml'}
+{foreachelse}
+    <noRepository />
+{/foreach}
+</repositories>

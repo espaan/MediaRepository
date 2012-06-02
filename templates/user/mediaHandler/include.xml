@@ -1,0 +1,12 @@
+{* purpose of this template: media handlers xml inclusion template in user area *}
+<mediahandler id="{$item.id}" createdon="{$item.createdDate|dateformat}" updatedon="{$item.updatedDate|dateformat}">
+    <id>{$item.id}</id>
+    <mimeType><![CDATA[{$item.mimeType}]]></mimeType>
+    <fileType><![CDATA[{$item.fileType}]]></fileType>
+    <foundMimeType><![CDATA[{$item.foundMimeType}]]></foundMimeType>
+    <foundFileType><![CDATA[{$item.foundFileType}]]></foundFileType>
+    <handlerName><![CDATA[{$item.handlerName}]]></handlerName>
+    <title><![CDATA[{$item.title}]]></title>
+    <active>{if !$item.active}0{else}1{/if}</active>
+    <image{if $item.image ne ''} extension="{$item.imageMeta.extension}" size="{$item.imageMeta.size}" isImage="{if $item.imageMeta.isImage}true{else}false{/if}"{if $item.imageMeta.isImage} width="{$item.imageMeta.width}" height="{$item.imageMeta.height}" format="{$item.imageMeta.format}"{/if}{/if}>{$item.image}</image>
+</mediahandler>
