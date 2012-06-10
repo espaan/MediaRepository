@@ -142,6 +142,11 @@
                     {formintinput group='medium' id='freeType' mandatory=false __title='Enter the free type of the medium' maxLength=4 cssClass=' validate-digits' }
                     {mediarepositoryValidationError id='freeType' class='validate-digits'}
                 </div>
+                <div class="z-formrow">
+                    {formlabel for='repository' __text='Repository'}
+                    {formdropdownlist id='repository' group='medium' mandatory=true __title='Please choose a repository'}
+                    
+                </div>
                 
                 <div class="z-formrow">
                     {assign var='mandatorySym' value='1'}

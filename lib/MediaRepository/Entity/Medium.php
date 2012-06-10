@@ -27,8 +27,20 @@ use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 class MediaRepository_Entity_Medium extends MediaRepository_Entity_Base_Medium
 {
     // feel free to add your own methods here
-
+    //The repository that the medium belongs to.
+    protected $repository=null;
     
+    public function setRepository($repository)
+    {
+        if($this->repository != $repository){
+            $this->repository = $repository;
+        }
+    }
+    
+    public function getRepository()
+    {
+        return $this->repository;
+    }
     /**
      * Post-Process the data after the entity has been constructed by the entity manager.
      *

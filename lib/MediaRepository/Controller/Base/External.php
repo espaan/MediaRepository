@@ -170,8 +170,7 @@ class MediaRepository_Controller_Base_External extends Zikula_AbstractController
              ->assign('sort', $sort)
              ->assign('sortdir', $sdir)
              ->assign('currentPage', $currentPage)
-             ->assign('pager', array('numitems'     => $objectCount,
-                                     'itemsperpage' => $resultsPerPage));
+             ->assign('pager', array('numitems'     => $objectCount, 'itemsperpage' => $resultsPerPage));
         return $view->display('external/' . $objectType . '/find.tpl');
     }
 }
