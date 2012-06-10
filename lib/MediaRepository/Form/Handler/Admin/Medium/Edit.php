@@ -52,6 +52,27 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
 
 
         parent::initialize($view);
+        
+        $entity = $this->entityRef;
+
+        if ($this->mode == 'edit') {
+            
+        } else {
+            if ($this->hasTemplateId !== true) {
+                $entity['mediaHandlers'] = $this->retrieveRelatedObjects('mediaHandler', 'mediahandlers', true);
+            }
+        }
+        // save entity reference for later reuse
+        //I need to repeat this to change a variable in the set up.
+        $this->entityRef = $entity;
+
+        $entityData = $entity->toArray();
+        //we need to convert the userid to a username
+        $owner = UserUtil::getVars($entityData['owner']);
+        $entityData['ownerSelector'] = $owner['uname'];
+
+        // assign data to template as array (makes translatable support easier)
+        $this->view->assign($this->objectTypeLower, $entityData);
 
         //this grabs the respository id from the form, it also 
         //gives it as an array and the incomingIds expects just he id
@@ -67,7 +88,7 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
             //The entity represents the datbase data, it has all the parameters in it
             //There is a second table, medrep_repositoryfiles that links the files to the media repositories
             //I need to figure out how to check whether that is there.
-            $entity = $this->entityRef;
+            
             //I need to set this to the current repository.
             $this->_currentRepository = null;
         }

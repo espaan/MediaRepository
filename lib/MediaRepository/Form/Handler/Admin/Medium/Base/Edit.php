@@ -67,16 +67,10 @@ class MediaRepository_Form_Handler_Admin_Medium_Base_Edit extends MediaRepositor
                 $entity['mediaHandlers'] = $this->retrieveRelatedObjects('mediaHandler', 'mediahandlers', true);
             }
         }
-
-
-
         // save entity reference for later reuse
         $this->entityRef = $entity;
 
         $entityData = $entity->toArray();
-        //we need to convert the userid to a username
-        $owner = UserUtil::getVars($entityData['owner']);
-        $entityData['ownerSelector'] = $owner['uname'];
 
         // assign data to template as array (makes translatable support easier)
         $this->view->assign($this->objectTypeLower, $entityData);
