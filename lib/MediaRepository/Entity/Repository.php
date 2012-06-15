@@ -27,7 +27,6 @@ use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 class MediaRepository_Entity_Repository extends MediaRepository_Entity_Base_Repository
 {
     // feel free to add your own methods here
-
     
     /**
      * Post-Process the data after the entity has been constructed by the entity manager.

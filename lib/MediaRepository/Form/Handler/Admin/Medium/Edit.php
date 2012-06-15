@@ -19,9 +19,8 @@
 class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_Form_Handler_Admin_Medium_Base_Edit {
 
     // feel free to extend the base handler class here
+    private $_currRepo = null;
 
-    private $_currentRepository = null;
-    
     public function postInitialize() {
         parent::postInitialize();
 
@@ -30,11 +29,29 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
         foreach ($allRepositories as $repository) {
             $repositoryItems[] = array('value' => $repository['id'], 'text' =>
                 $repository['name']);
+            if ($this->mode == 'edit') {
+                //We are about to present the form, so lets find if it is connected
+                //to a repository. The following line grabs the Repository Table data
+                //Here we walk through each repository, get the medium files associated with it (getFiles)
+                //The calls contains on its collection of medium files
+                // if the collection of files contains the file we are editing, then we set the incomingID to it
+                //This will then set the repository correctly.
+                if ($repository->getFiles()->contains($this->entityRef)) {
+                    if ($this->incomingIds['repository'] == 0) {
+                        $this->incomingIds['repository'] = $repository->getID();
+                    }
+                    $this->_currRepo = $repository;
+                    break;
+                }
+            }
         }
 
         $medium = $this->view->get_template_vars('medium');
         $medium['repositoryItems'] = $repositoryItems;
-        $medium['repository'] = 1; // selected value
+        //Set the repository that this file belongs to. We determined this in initialize.
+
+        $medium['repository'] = $this->incomingIds['repository']; // selected value
+
 
         $this->view->assign('medium', $medium);
     }
@@ -52,25 +69,15 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
 
 
         parent::initialize($view);
-        
-        $entity = $this->entityRef;
 
-        if ($this->mode == 'edit') {
-            
-        } else {
-            if ($this->hasTemplateId !== true) {
-                $entity['mediaHandlers'] = $this->retrieveRelatedObjects('mediaHandler', 'mediahandlers', true);
-            }
-        }
-        // save entity reference for later reuse
-        //I need to repeat this to change a variable in the set up.
-        $this->entityRef = $entity;
+        $entity = $this->entityRef;
 
         $entityData = $entity->toArray();
         //we need to convert the userid to a username
         $owner = UserUtil::getVars($entityData['owner']);
-        $entityData['ownerSelector'] = $owner['uname'];
-
+        if ($owner) {
+            $entityData['ownerSelector'] = $owner['uname'];
+        }
         // assign data to template as array (makes translatable support easier)
         $this->view->assign($this->objectTypeLower, $entityData);
 
@@ -79,18 +86,10 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
         //so we pull it out of the array.
         //note that I had to take some code out of the Base class to prevent it from
         //stomping on this code and changing incomingIds['repository'
-        $repository = $this->request->request->get('repository', '');
-        if ($repository) {
-            $this->incomingIds['repository'] = $repository[0];
-        } elseif ($this->mode == 'edit') {
-            //We are about to present the form, so lets find if it is connected
-            //to an repository
-            //The entity represents the datbase data, it has all the parameters in it
-            //There is a second table, medrep_repositoryfiles that links the files to the media repositories
-            //I need to figure out how to check whether that is there.
-            
-            //I need to set this to the current repository.
-            $this->_currentRepository = null;
+        $medRepo = $this->request->request->get('repository', '');
+        $this->incomingIds['repository'] = 0;
+        if ($medRepo) {
+            $this->incomingIds['repository'] = $medRepo[0];
         }
         // everything okay, no initialization errors occured
         return true;
@@ -119,15 +118,20 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
                 if ($relObj != null) {
                     //The data may have changed for this file, I should store the old repository
                     //and see if it has changed.
-                    if ($args['commandName'] == 'update') {
-                        $relObj->removeFiles($entity);
+                    if ($this->_currRepo != null) {
+                        if ($this->_currRepo->getID() != $relObj->getID()) {
+                            //remove the reference to the file from the old repo
+                            $this->_currRepo->removeFiles($entity);
+                            $relObj->addFiles($entity);
+                        }
                     } else {
                         $relObj->addFiles($entity);
                     }
                 }
+                $this->entityManager->flush();
             }
-            $this->entityManager->flush();
         }
     }
 
 }
+

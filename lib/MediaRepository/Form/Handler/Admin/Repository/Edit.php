@@ -18,4 +18,13 @@
 class MediaRepository_Form_Handler_Admin_Repository_Edit extends MediaRepository_Form_Handler_Admin_Repository_Base_Edit
 {
     // feel free to extend the base handler class here
+     public function initialize(Zikula_Form_View $view)
+    {
+         parent::initialize($view);
+         //initialize the popup menu that allows choosing between disk and database storage.
+         $storageItems = array( array('text' => 'On Disk', 'value' => '1'),
+                                array('text' => 'In Database', 'value' => '2') );
+         $this->view->assign('storageItems', $storageItems);
+    }
+    
 }

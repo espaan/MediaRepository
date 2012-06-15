@@ -63,9 +63,7 @@
                 <div class="z-formrow">
                     {gt text='How media items in this repository should be stored.' assign='toolTip'}
                     {formlabel for='storageMode' __text='Storage mode' mandatorysym='1' class='mediarepositoryFormTooltips' title=$toolTip}
-                    {formintinput group='repository' id='storageMode' mandatory=true __title='Enter the storage mode of the repository' maxLength=2 cssClass='required validate-digits' }
-                    {mediarepositoryValidationError id='storageMode' class='required'}
-                    {mediarepositoryValidationError id='storageMode' class='validate-digits'}
+                    {formdropdownlist group='repository' id='storageMode' items=$storageItems mandatory=true __title='Enter the storage mode of the repository'}
                 </div>
                 
                 <div class="z-formrow">
@@ -91,7 +89,7 @@
                 </div>
                 
                 <div class="z-formrow">
-                    {formlabel for='maxSizeForMail' __text='Max size for mail'}
+                    {formlabel for='maxSizeForMail' __text='Max size for mail (in MB)'}
                     {formintinput group='repository' id='maxSizeForMail' mandatory=false __title='Enter the max size for mail of the repository' maxLength=11 cssClass=' validate-digits' }
                     {mediarepositoryValidationError id='maxSizeForMail' class='validate-digits'}
                 </div>
@@ -104,7 +102,7 @@
                 </div>
                 
                 <div class="z-formrow">
-                    {formlabel for='maxUploadFileSize' __text='Max upload file size'}
+                    {formlabel for='maxUploadFileSize' __text='Max upload file size (in MB)'}
                     {formintinput group='repository' id='maxUploadFileSize' mandatory=false __title='Enter the max upload file size of the repository' maxLength=11 cssClass=' validate-digits' }
                     {mediarepositoryValidationError id='maxUploadFileSize' class='validate-digits'}
                 </div>
