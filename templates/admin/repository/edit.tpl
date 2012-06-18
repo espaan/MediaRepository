@@ -158,9 +158,8 @@
                 </div>
                 
                 <div class="z-formrow">
-                    {formlabel for='allowTemplateOverrideDetail' __text='Allow template override detail' mandatorysym='1'}
-                    {formcheckbox group='repository' id='allowTemplateOverrideDetail' readOnly=false __title='allow template override detail ?' cssClass='required' }
-                    {mediarepositoryValidationError id='allowTemplateOverrideDetail' class='required'}
+                    {formlabel for='allowTemplateOverrideDetail' __text='Allow template override detail'}
+                    {formcheckbox group='repository' id='allowTemplateOverrideDetail' readOnly=false __title='allow template override detail ?' cssClass='' }
                 </div>
                 
                 <div class="z-formrow">
