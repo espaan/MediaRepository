@@ -40,11 +40,10 @@
         <col id="ctitle" />
         <col id="ckeywords" />
         <col id="cdescription" />
-        <col id="clicense" />
+        <col id="cdatetaken" />
+        <col id="cplacetaken" />
         <col id="cdlcount" />
         <col id="curl" />
-        <col id="cmediahandler" />
-        <col id="cfreetype" />
         <col id="cfileupload" />
         <col id="citemactions" />
     </colgroup>
@@ -62,23 +61,17 @@
         <th id="hdescription" scope="col" class="z-left">
             {sortlink __linktext='Description' sort='description' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
         </th>
-        <th id="hlicense" scope="col" class="z-left">
-            {sortlink __linktext='License' sort='license' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
+        <th id="hdatetaken" scope="col" class="z-left">
+            {sortlink __linktext='Date taken' sort='dateTaken' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
+        </th>
+        <th id="hplacetaken" scope="col" class="z-left">
+            {sortlink __linktext='Place taken' sort='placeTaken' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
         </th>
         <th id="hdlcount" scope="col" class="z-right">
             {sortlink __linktext='Dlcount' sort='dlcount' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
         </th>
         <th id="hurl" scope="col" class="z-left">
             {sortlink __linktext='Url' sort='url' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
-        </th>
-        <th id="hmediahandler" scope="col" class="z-left">
-            {sortlink __linktext='Media handler' sort='mediaHandler' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
-        </th>
-        <th id="hfreetype" scope="col" class="z-right">
-            {sortlink __linktext='Free type' sort='freeType' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
-        </th>
-        <th id="hadditions" scope="col" class="z-left">
-            {sortlink __linktext='Additions' sort='additions' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
         </th>
         <th id="hfileupload" scope="col" class="z-left">
             {sortlink __linktext='File upload' sort='fileUpload' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId Repository=$Repository owner=$owner searchterm=$searchterm pageSize=$pageSize showLocation=$showLocation modname='MediaRepository' type='admin' func='view' ot='medium'}
@@ -102,8 +95,11 @@
         <td headers="hdescription" class="z-left">
             {$medium.description}
         </td>
-        <td headers="hlicense" class="z-left">
-            {$medium.license}
+        <td headers="hdatetaken" class="z-left">
+            {$medium.dateTaken}
+        </td>
+        <td headers="hplacetaken" class="z-left">
+            {$medium.placeTaken}
         </td>
         <td headers="hdlcount" class="z-right">
             {$medium.dlcount}
@@ -112,15 +108,6 @@
             {if $medium.url ne ''}
                 <a href="{$medium.url}" title="{gt text='Visit this page'}">{icon type='url' size='extrasmall' __alt='Homepage'}</a>
             {else}&nbsp;{/if}
-        </td>
-        <td headers="hmediahandler" class="z-left">
-            {$medium.mediaHandler}
-        </td>
-        <td headers="hfreetype" class="z-right">
-            {$medium.freeType}
-        </td>
-        <td headers="hadditions" class="z-left">
-            {$medium.additions}
         </td>
         <td headers="hfileupload" class="z-left">
               <a href="{$medium.fileUploadFullPathURL}" title="{$medium.title|replace:"\"":""}"{if $medium.fileUploadMeta.isImage} rel="imageviewer[medium]"{/if}>
@@ -137,14 +124,14 @@
                     <a href="{$option.url.type|mediarepositoryActionUrl:$option.url.func:$option.url.arguments}" title="{$option.linkTitle|safetext}"{if $option.icon eq 'preview'} target="_blank"{/if}>{icon type=$option.icon size='extrasmall' alt=$option.linkText|safetext}</a>
                 {/foreach}
                 {icon id="itemactions`$medium.id`trigger" type='options' size='extrasmall' __alt='Actions' style='display: none' class='z-pointer'}
+                <script type="text/javascript">
+                /* <![CDATA[ */
+                    document.observe('dom:loaded', function() {
+                        medrepInitItemActions('medium', 'view', 'itemactions{{$medium.id}}');
+                    });
+                /* ]]> */
+                </script>
             {/if}
-            <script type="text/javascript">
-            /* <![CDATA[ */
-                document.observe('dom:loaded', function() {
-                    medrepInitItemActions('medium', 'view', 'itemactions{{$medium.id}}');
-                });
-            /* ]]> */
-            </script>
         </td>
     </tr>
 {foreachelse}

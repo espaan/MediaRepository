@@ -138,35 +138,6 @@
                 </div>
                 
                 <div class="z-formrow">
-                    {formlabel for='defaultTemplateCollection' __text='Default template collection' mandatorysym='1'}
-                    {formtextinput group='repository' id='defaultTemplateCollection' mandatory=true readOnly=false __title='Enter the default template collection of the repository' textMode='singleline' maxLength=255 cssClass='required' }
-                    {mediarepositoryValidationError id='defaultTemplateCollection' class='required'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='allowTemplateOverrideCollection' __text='Allow template override collection'}
-                    {formcheckbox group='repository' id='allowTemplateOverrideCollection' readOnly=false __title='allow template override collection ?' cssClass='' }
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='defaultTemplateDetail' __text='Default template detail' mandatorysym='1'}
-                    {formtextinput group='repository' id='defaultTemplateDetail' mandatory=true readOnly=false __title='Enter the default template detail of the repository' textMode='singleline' maxLength=255 cssClass='required' }
-                    {mediarepositoryValidationError id='defaultTemplateDetail' class='required'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='allowTemplateOverrideDetail' __text='Allow template override detail' mandatorysym='1'}
-                    {formcheckbox group='repository' id='allowTemplateOverrideDetail' readOnly=false __title='allow template override detail ?' cssClass='required' }
-                    {mediarepositoryValidationError id='allowTemplateOverrideDetail' class='required'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='startPageViewMode' __text='Start page view mode'}
-                    {formintinput group='repository' id='startPageViewMode' mandatory=false __title='Enter the start page view mode of the repository' maxLength=4 cssClass=' validate-digits' }
-                    {mediarepositoryValidationError id='startPageViewMode' class='validate-digits'}
-                </div>
-                
-                <div class="z-formrow">
                     {formlabel for='downloadMode' __text='Download mode' mandatorysym='1'}
                     {formintinput group='repository' id='downloadMode' mandatory=true __title='Enter the download mode of the repository' maxLength=2 cssClass='required validate-digits' }
                     {mediarepositoryValidationError id='downloadMode' class='required'}

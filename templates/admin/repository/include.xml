@@ -20,11 +20,6 @@
     <shrinkDimensions>{$item.shrinkDimensions}</shrinkDimensions>
     <useThumbCropper>{if !$item.useThumbCropper}0{else}1{/if}</useThumbCropper>
     <cropSizeMode>{$item.cropSizeMode}</cropSizeMode>
-    <defaultTemplateCollection><![CDATA[{$item.defaultTemplateCollection}]]></defaultTemplateCollection>
-    <allowTemplateOverrideCollection>{if !$item.allowTemplateOverrideCollection}0{else}1{/if}</allowTemplateOverrideCollection>
-    <defaultTemplateDetail><![CDATA[{$item.defaultTemplateDetail}]]></defaultTemplateDetail>
-    <allowTemplateOverrideDetail>{if !$item.allowTemplateOverrideDetail}0{else}1{/if}</allowTemplateOverrideDetail>
-    <startPageViewMode>{$item.startPageViewMode}</startPageViewMode>
     <downloadMode>{$item.downloadMode}</downloadMode>
     <sendMailAfterUpload>{if !$item.sendMailAfterUpload}0{else}1{/if}</sendMailAfterUpload>
     <mailRecipient><![CDATA[{$item.mailRecipient}]]></mailRecipient>

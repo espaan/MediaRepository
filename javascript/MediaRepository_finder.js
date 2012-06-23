@@ -214,7 +214,7 @@ mediarepository.itemSelector.getItemList = function () {
 };
 
 mediarepository.itemSelector.updateItemDropdownEntries = function () {
-	var baseId, itemSelector, items, i, item;
+    var baseId, itemSelector, items, i, item;
 
     baseId = mediarepository.itemSelector.baseId;
     itemSelector = $(baseId + '_id');

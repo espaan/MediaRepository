@@ -1,5 +1,5 @@
 {* Purpose of this template: Display one certain repository within an external context *}
-<div id="repository{$repository.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@35a3f178 (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalrepository">
+<div id="repository{$repository.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@2206179e (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalrepository">
 {if $displayMode eq 'link'}
     <p class="medrepexternallink">
     <a href="{modurl modname='MediaRepository' type='user' func='display' ot='repository' id=$repository.id}" title="{$repository.name|replace:"\"":""}">

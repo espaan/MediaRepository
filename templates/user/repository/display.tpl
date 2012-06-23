@@ -84,16 +84,6 @@
     <dd>{$repository.useThumbCropper|yesno:true}</dd>
     <dt>{gt text='Crop size mode'}</dt>
     <dd>{$repository.cropSizeMode}</dd>
-    <dt>{gt text='Default template collection'}</dt>
-    <dd>{$repository.defaultTemplateCollection}</dd>
-    <dt>{gt text='Allow template override collection'}</dt>
-    <dd>{$repository.allowTemplateOverrideCollection|yesno:true}</dd>
-    <dt>{gt text='Default template detail'}</dt>
-    <dd>{$repository.defaultTemplateDetail}</dd>
-    <dt>{gt text='Allow template override detail'}</dt>
-    <dd>{$repository.allowTemplateOverrideDetail|yesno:true}</dd>
-    <dt>{gt text='Start page view mode'}</dt>
-    <dd>{$repository.startPageViewMode}</dd>
     <dt>{gt text='Download mode'}</dt>
     <dd>{$repository.downloadMode}</dd>
     <dt>{gt text='Send mail after upload'}</dt>

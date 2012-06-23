@@ -53,11 +53,6 @@
         <col id="cshrinkdimensions" />
         <col id="cusethumbcropper" />
         <col id="ccropsizemode" />
-        <col id="cdefaulttemplatecollection" />
-        <col id="callowtemplateoverridecollection" />
-        <col id="cdefaulttemplatedetail" />
-        <col id="callowtemplateoverridedetail" />
-        <col id="cstartpageviewmode" />
         <col id="cdownloadmode" />
         <col id="csendmailafterupload" />
         <col id="cmailrecipient" />
@@ -66,85 +61,70 @@
     <thead>
     <tr>
         <th id="hname" scope="col" class="z-left">
-            {sortlink __linktext='Name' sort='name' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Name' sort='name' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hworkdirectory" scope="col" class="z-left">
-            {sortlink __linktext='Work directory' sort='workDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Work directory' sort='workDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hstoragedirectory" scope="col" class="z-left">
-            {sortlink __linktext='Storage directory' sort='storageDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Storage directory' sort='storageDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hcachedirectory" scope="col" class="z-left">
-            {sortlink __linktext='Cache directory' sort='cacheDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Cache directory' sort='cacheDirectory' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hstoragemode" scope="col" class="z-right">
-            {sortlink __linktext='Storage mode' sort='storageMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Storage mode' sort='storageMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hpermissionscope" scope="col" class="z-right">
-            {sortlink __linktext='Permission scope' sort='permissionScope' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Permission scope' sort='permissionScope' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="husequota" scope="col" class="z-center">
-            {sortlink __linktext='Use quota' sort='useQuota' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Use quota' sort='useQuota' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hallowmanagementofownfiles" scope="col" class="z-center">
-            {sortlink __linktext='Allow management of own files' sort='allowManagementOfOwnFiles' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Allow management of own files' sort='allowManagementOfOwnFiles' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hallowfilemailing" scope="col" class="z-center">
-            {sortlink __linktext='Allow file mailing' sort='allowFileMailing' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Allow file mailing' sort='allowFileMailing' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hmaxsizeformail" scope="col" class="z-right">
-            {sortlink __linktext='Max size for mail' sort='maxSizeForMail' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Max size for mail' sort='maxSizeForMail' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hmaxfilesperupload" scope="col" class="z-right">
-            {sortlink __linktext='Max files per upload' sort='maxFilesPerUpload' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Max files per upload' sort='maxFilesPerUpload' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hmaxuploadfilesize" scope="col" class="z-right">
-            {sortlink __linktext='Max upload file size' sort='maxUploadFileSize' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Max upload file size' sort='maxUploadFileSize' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="huploadnamingconvention" scope="col" class="z-right">
-            {sortlink __linktext='Upload naming convention' sort='uploadNamingConvention' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Upload naming convention' sort='uploadNamingConvention' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="huploadnamingprefix" scope="col" class="z-left">
-            {sortlink __linktext='Upload naming prefix' sort='uploadNamingPrefix' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Upload naming prefix' sort='uploadNamingPrefix' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="henablesharpen" scope="col" class="z-center">
-            {sortlink __linktext='Enable sharpen' sort='enableSharpen' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Enable sharpen' sort='enableSharpen' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="henableshrinking" scope="col" class="z-center">
-            {sortlink __linktext='Enable shrinking' sort='enableShrinking' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Enable shrinking' sort='enableShrinking' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hshrinkdimensions" scope="col" class="z-left">
-            {sortlink __linktext='Shrink dimensions' sort='shrinkDimensions' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Shrink dimensions' sort='shrinkDimensions' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="husethumbcropper" scope="col" class="z-center">
-            {sortlink __linktext='Use thumb cropper' sort='useThumbCropper' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Use thumb cropper' sort='useThumbCropper' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hcropsizemode" scope="col" class="z-right">
-            {sortlink __linktext='Crop size mode' sort='cropSizeMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
-        </th>
-        <th id="hdefaulttemplatecollection" scope="col" class="z-left">
-            {sortlink __linktext='Default template collection' sort='defaultTemplateCollection' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
-        </th>
-        <th id="hallowtemplateoverridecollection" scope="col" class="z-center">
-            {sortlink __linktext='Allow template override collection' sort='allowTemplateOverrideCollection' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
-        </th>
-        <th id="hdefaulttemplatedetail" scope="col" class="z-left">
-            {sortlink __linktext='Default template detail' sort='defaultTemplateDetail' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
-        </th>
-        <th id="hallowtemplateoverridedetail" scope="col" class="z-center">
-            {sortlink __linktext='Allow template override detail' sort='allowTemplateOverrideDetail' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
-        </th>
-        <th id="hstartpageviewmode" scope="col" class="z-right">
-            {sortlink __linktext='Start page view mode' sort='startPageViewMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Crop size mode' sort='cropSizeMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hdownloadmode" scope="col" class="z-right">
-            {sortlink __linktext='Download mode' sort='downloadMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Download mode' sort='downloadMode' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hsendmailafterupload" scope="col" class="z-center">
-            {sortlink __linktext='Send mail after upload' sort='sendMailAfterUpload' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Send mail after upload' sort='sendMailAfterUpload' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hmailrecipient" scope="col" class="z-left">
-            {sortlink __linktext='Mail recipient' sort='mailRecipient' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper allowTemplateOverrideCollection=$allowTemplateOverrideCollection allowTemplateOverrideDetail=$allowTemplateOverrideDetail sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
+            {sortlink __linktext='Mail recipient' sort='mailRecipient' currentsort=$sort sortdir=$sdir all=$all own=$own catid=$catId searchterm=$searchterm pageSize=$pageSize useQuota=$useQuota allowManagementOfOwnFiles=$allowManagementOfOwnFiles allowFileMailing=$allowFileMailing enableSharpen=$enableSharpen enableShrinking=$enableShrinking useThumbCropper=$useThumbCropper sendMailAfterUpload=$sendMailAfterUpload modname='MediaRepository' type='user' func='view' ot='repository'}
         </th>
         <th id="hitemactions" scope="col" class="z-right z-order-unsorted">{gt text='Actions'}</th>
     </tr>
@@ -210,21 +190,6 @@
         <td headers="hcropsizemode" class="z-right">
             {$repository.cropSizeMode}
         </td>
-        <td headers="hdefaulttemplatecollection" class="z-left">
-            {$repository.defaultTemplateCollection}
-        </td>
-        <td headers="hallowtemplateoverridecollection" class="z-center">
-            {$repository.allowTemplateOverrideCollection|yesno:true}
-        </td>
-        <td headers="hdefaulttemplatedetail" class="z-left">
-            {$repository.defaultTemplateDetail}
-        </td>
-        <td headers="hallowtemplateoverridedetail" class="z-center">
-            {$repository.allowTemplateOverrideDetail|yesno:true}
-        </td>
-        <td headers="hstartpageviewmode" class="z-right">
-            {$repository.startPageViewMode}
-        </td>
         <td headers="hdownloadmode" class="z-right">
             {$repository.downloadMode}
         </td>
@@ -240,19 +205,19 @@
                     <a href="{$option.url.type|mediarepositoryActionUrl:$option.url.func:$option.url.arguments}" title="{$option.linkTitle|safetext}"{if $option.icon eq 'preview'} target="_blank"{/if}>{icon type=$option.icon size='extrasmall' alt=$option.linkText|safetext}</a>
                 {/foreach}
                 {icon id="itemactions`$repository.id`trigger" type='options' size='extrasmall' __alt='Actions' style='display: none' class='z-pointer'}
+                <script type="text/javascript">
+                /* <![CDATA[ */
+                    document.observe('dom:loaded', function() {
+                        medrepInitItemActions('repository', 'view', 'itemactions{{$repository.id}}');
+                    });
+                /* ]]> */
+                </script>
             {/if}
-            <script type="text/javascript">
-            /* <![CDATA[ */
-                document.observe('dom:loaded', function() {
-                    medrepInitItemActions('repository', 'view', 'itemactions{{$repository.id}}');
-                });
-            /* ]]> */
-            </script>
         </td>
     </tr>
 {foreachelse}
     <tr class="z-datatableempty">
-      <td class="z-left" colspan="28">
+      <td class="z-left" colspan="23">
     {gt text='No repositories found.'}
       </td>
     </tr>

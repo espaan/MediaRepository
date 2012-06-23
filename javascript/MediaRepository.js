@@ -1,5 +1,20 @@
 'use strict';
 
+var medrepContextMenu;
+
+medrepContextMenu = Class.create(Control.ContextMenu, {
+    selectMenuItem: function ($super, event, item, item_container) {
+        // open in new tab / window when right-clicked
+        if (event.isRightClick()) {
+            item.callback(this.clicked, true);
+            event.stop(); // close the menu
+            return;
+        }
+        // open in current window when left-clicked
+        return $super(event, item, item_container);
+    }
+});
+
 /**
  * Initialises the context menu for item actions.
  */
@@ -9,7 +24,8 @@ function medrepInitItemActions(objectType, func, containerId) {
     triggerId = containerId + 'trigger';
 
     // attach context menu
-    contextMenu = new Control.ContextMenu(triggerId, { leftClick: true, animation: false });
+    //contextMenu = new Control.ContextMenu(triggerId, { leftClick: true, animation: false });
+    contextMenu = new medrepContextMenu(triggerId, { leftClick: true, animation: false });
 
     // process normal links
     $$('#' + containerId + ' a').each(function (elem) {
@@ -55,8 +71,15 @@ function medrepInitItemActions(objectType, func, containerId) {
 
         contextMenu.addItem({
             label: iconFile + linkText,
-            callback: function () {
-                window.location = elem.readAttribute('href');
+            callback: function (selectedMenuItem, isRightClick) {
+                var url;
+
+                url = elem.readAttribute('href');
+                if (isRightClick) {
+                    window.open(url);
+                } else {
+                    window.location = url;
+                }
             }
         });
     });
@@ -119,14 +142,6 @@ function medrepInitQuickNavigation(objectType, controller) {
         }
         if ($('useThumbCropper') !== undefined) {
             $('useThumbCropper').observe('click', function () { medrepSubmitQuickNavForm(objectType); })
-                                     .observe('keypress', function () { medrepSubmitQuickNavForm(objectType); });
-        }
-        if ($('allowTemplateOverrideCollection') !== undefined) {
-            $('allowTemplateOverrideCollection').observe('click', function () { medrepSubmitQuickNavForm(objectType); })
-                                     .observe('keypress', function () { medrepSubmitQuickNavForm(objectType); });
-        }
-        if ($('allowTemplateOverrideDetail') !== undefined) {
-            $('allowTemplateOverrideDetail').observe('click', function () { medrepSubmitQuickNavForm(objectType); })
                                      .observe('keypress', function () { medrepSubmitQuickNavForm(objectType); });
         }
         if ($('sendMailAfterUpload') !== undefined) {

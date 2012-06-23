@@ -42,11 +42,6 @@
             <option value="shrinkDimensions"{if $sort eq 'shrinkDimensions'} selected="selected"{/if}>{gt text='Shrink dimensions'}</option>
             <option value="useThumbCropper"{if $sort eq 'useThumbCropper'} selected="selected"{/if}>{gt text='Use thumb cropper'}</option>
             <option value="cropSizeMode"{if $sort eq 'cropSizeMode'} selected="selected"{/if}>{gt text='Crop size mode'}</option>
-            <option value="defaultTemplateCollection"{if $sort eq 'defaultTemplateCollection'} selected="selected"{/if}>{gt text='Default template collection'}</option>
-            <option value="allowTemplateOverrideCollection"{if $sort eq 'allowTemplateOverrideCollection'} selected="selected"{/if}>{gt text='Allow template override collection'}</option>
-            <option value="defaultTemplateDetail"{if $sort eq 'defaultTemplateDetail'} selected="selected"{/if}>{gt text='Default template detail'}</option>
-            <option value="allowTemplateOverrideDetail"{if $sort eq 'allowTemplateOverrideDetail'} selected="selected"{/if}>{gt text='Allow template override detail'}</option>
-            <option value="startPageViewMode"{if $sort eq 'startPageViewMode'} selected="selected"{/if}>{gt text='Start page view mode'}</option>
             <option value="downloadMode"{if $sort eq 'downloadMode'} selected="selected"{/if}>{gt text='Download mode'}</option>
             <option value="sendMailAfterUpload"{if $sort eq 'sendMailAfterUpload'} selected="selected"{/if}>{gt text='Send mail after upload'}</option>
             <option value="mailRecipient"{if $sort eq 'mailRecipient'} selected="selected"{/if}>{gt text='Mail recipient'}</option>
@@ -99,14 +94,6 @@
         {if !isset($useThumbCropperFilter) || $useThumbCropperFilter eq true}
             <input type="checkbox" id="useThumbCropper" name="useThumbCropper" value="1"{if $useThumbCropper eq 1} checked="checked"{/if} />
             <label for="useThumbCropper">{gt text='Use thumb cropper'}</label>
-        {/if}
-        {if !isset($allowTemplateOverrideCollectionFilter) || $allowTemplateOverrideCollectionFilter eq true}
-            <input type="checkbox" id="allowTemplateOverrideCollection" name="allowTemplateOverrideCollection" value="1"{if $allowTemplateOverrideCollection eq 1} checked="checked"{/if} />
-            <label for="allowTemplateOverrideCollection">{gt text='Allow template override collection'}</label>
-        {/if}
-        {if !isset($allowTemplateOverrideDetailFilter) || $allowTemplateOverrideDetailFilter eq true}
-            <input type="checkbox" id="allowTemplateOverrideDetail" name="allowTemplateOverrideDetail" value="1"{if $allowTemplateOverrideDetail eq 1} checked="checked"{/if} />
-            <label for="allowTemplateOverrideDetail">{gt text='Allow template override detail'}</label>
         {/if}
         {if !isset($sendMailAfterUploadFilter) || $sendMailAfterUploadFilter eq true}
             <input type="checkbox" id="sendMailAfterUpload" name="sendMailAfterUpload" value="1"{if $sendMailAfterUpload eq 1} checked="checked"{/if} />

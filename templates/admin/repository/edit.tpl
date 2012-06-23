@@ -35,7 +35,7 @@
                 <div class="z-formrow">
                     {gt text='Name of this repository, e.g. public download area.' assign='toolTip'}
                     {formlabel for='name' __text='Name' mandatorysym='1' class='mediarepositoryFormTooltips' title=$toolTip}
-                    {formtextinput group='repository' id='name' mandatory=true readOnly=false __title='Enter the name of the repository' textMode='singleline' maxLength=255 cssClass='required' }
+                    {formtextinput group='repository' id='name' mandatory=true readOnly=false __title='Enter the name of the repository' textMode='singleline' size=30 maxLength=255 cssClass='required' }
                     {mediarepositoryValidationError id='name' class='required'}
                 </div>
                 
@@ -68,9 +68,8 @@
                 
                 <div class="z-formrow">
                     {formlabel for='permissionScope' __text='Permission scope' mandatorysym='1'}
-                    {formintinput group='repository' id='permissionScope' mandatory=true __title='Enter the permission scope of the repository' maxLength=4 cssClass='required validate-digits' }
+                    {formdropdownlist group='repository' id='permissionScope' items=$permScope mandatory=true __title='Enter the permission scope of the repository. This is who can access this repository.'}
                     {mediarepositoryValidationError id='permissionScope' class='required'}
-                    {mediarepositoryValidationError id='permissionScope' class='validate-digits'}
                 </div>
                 
                 <div class="z-formrow">
@@ -109,8 +108,7 @@
                 
                 <div class="z-formrow">
                     {formlabel for='uploadNamingConvention' __text='Upload naming convention' mandatorysym='1'}
-                    {formintinput group='repository' id='uploadNamingConvention' mandatory=true __title='Enter the upload naming convention of the repository' maxLength=2 cssClass='required validate-digits' }
-                    {mediarepositoryValidationError id='uploadNamingConvention' class='required'}
+                    {formdropdownlist group='repository' id='uploadNamingConvention' items=$uploadNamingCon mandatory=true __title='Enter the upload naming convention of the repository.'}
                     {mediarepositoryValidationError id='uploadNamingConvention' class='validate-digits'}
                 </div>
                 
@@ -136,43 +134,13 @@
                 
                 <div class="z-formrow">
                     {formlabel for='cropSizeMode' __text='Crop size mode'}
-                    {formintinput group='repository' id='cropSizeMode' mandatory=false __title='Enter the crop size mode of the repository' maxLength=2 cssClass=' validate-digits' }
-                    {mediarepositoryValidationError id='cropSizeMode' class='validate-digits'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='defaultTemplateCollection' __text='Default template collection' mandatorysym='1'}
-                    {formtextinput group='repository' id='defaultTemplateCollection' mandatory=true readOnly=false __title='Enter the default template collection of the repository' textMode='singleline' maxLength=255 cssClass='required' }
-                    {mediarepositoryValidationError id='defaultTemplateCollection' class='required'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='allowTemplateOverrideCollection' __text='Allow template override collection'}
-                    {formcheckbox group='repository' id='allowTemplateOverrideCollection' readOnly=false __title='allow template override collection ?' cssClass='' }
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='defaultTemplateDetail' __text='Default template detail' mandatorysym='1'}
-                    {formtextinput group='repository' id='defaultTemplateDetail' mandatory=true readOnly=false __title='Enter the default template detail of the repository' textMode='singleline' maxLength=255 cssClass='required' }
-                    {mediarepositoryValidationError id='defaultTemplateDetail' class='required'}
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='allowTemplateOverrideDetail' __text='Allow template override detail'}
-                    {formcheckbox group='repository' id='allowTemplateOverrideDetail' readOnly=false __title='allow template override detail ?' cssClass='' }
-                </div>
-                
-                <div class="z-formrow">
-                    {formlabel for='startPageViewMode' __text='Start page view mode'}
-                    {formintinput group='repository' id='startPageViewMode' mandatory=false __title='Enter the start page view mode of the repository' maxLength=4 cssClass=' validate-digits' }
-                    {mediarepositoryValidationError id='startPageViewMode' class='validate-digits'}
+                    {formdropdownlist group='repository' id='cropSizeMode' items=$cropSizeMode mandatory=true __title='Enter the crop size mode of the repository'}
                 </div>
                 
                 <div class="z-formrow">
                     {formlabel for='downloadMode' __text='Download mode' mandatorysym='1'}
-                    {formintinput group='repository' id='downloadMode' mandatory=true __title='Enter the download mode of the repository' maxLength=2 cssClass='required validate-digits' }
+                    {formdropdownlist group='repository' id='downloadMode' items=$downloadMode mandatory=true __title='Enter the download mode of the repository'}
                     {mediarepositoryValidationError id='downloadMode' class='required'}
-                    {mediarepositoryValidationError id='downloadMode' class='validate-digits'}
                 </div>
                 
                 <div class="z-formrow">

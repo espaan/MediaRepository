@@ -1,5 +1,5 @@
 {* Purpose of this template: Display one certain media handler within an external context *}
-<div id="mediaHandler{$mediaHandler.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@1e4218cb (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalmediahandler">
+<div id="mediaHandler{$mediaHandler.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@3df89785 (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalmediahandler">
 {if $displayMode eq 'link'}
     <p class="medrepexternallink">
     <a href="{modurl modname='MediaRepository' type='user' func='display' ot='mediaHandler' id=$mediaHandler.id}" title="{$mediaHandler.title|replace:"\"":""}">

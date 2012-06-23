@@ -1,5 +1,5 @@
 {* Purpose of this template: Display one certain medium within an external context *}
-<div id="medium{$medium.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@569c6f2 (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalmedium">
+<div id="medium{$medium.de.guite.modulestudio.metamodel.modulestudio.impl.IntegerFieldImpl@ba3bc8c (name: id, documentation: null) (defaultValue: null, mandatory: true, nullable: false, leading: false, primaryKey: true, readonly: false, unique: true, translatable: false, sluggablePosition: 0, sortableGroup: false) (length: 9, sortablePosition: false) (minValue: 0, maxValue: 0, aggregateFor: , version: false)}" class="medrepexternalmedium">
 {if $displayMode eq 'link'}
     <p class="medrepexternallink">
     <a href="{modurl modname='MediaRepository' type='user' func='display' ot='medium' id=$medium.id slug=$medium.slug}" title="{$medium.title|replace:"\"":""}">

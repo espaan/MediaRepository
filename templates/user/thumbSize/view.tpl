@@ -79,14 +79,14 @@
                     <a href="{$option.url.type|mediarepositoryActionUrl:$option.url.func:$option.url.arguments}" title="{$option.linkTitle|safetext}"{if $option.icon eq 'preview'} target="_blank"{/if}>{icon type=$option.icon size='extrasmall' alt=$option.linkText|safetext}</a>
                 {/foreach}
                 {icon id="itemactions`$thumbSize.id`trigger" type='options' size='extrasmall' __alt='Actions' style='display: none' class='z-pointer'}
+                <script type="text/javascript">
+                /* <![CDATA[ */
+                    document.observe('dom:loaded', function() {
+                        medrepInitItemActions('thumbSize', 'view', 'itemactions{{$thumbSize.id}}');
+                    });
+                /* ]]> */
+                </script>
             {/if}
-            <script type="text/javascript">
-            /* <![CDATA[ */
-                document.observe('dom:loaded', function() {
-                    medrepInitItemActions('thumbSize', 'view', 'itemactions{{$thumbSize.id}}');
-                });
-            /* ]]> */
-            </script>
         </td>
     </tr>
 {foreachelse}
