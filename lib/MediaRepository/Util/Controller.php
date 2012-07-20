@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MediaRepository.
  *
@@ -14,7 +15,9 @@
 /**
  * Utility implementation class for controller helper methods.
  */
-class MediaRepository_Util_Controller extends MediaRepository_Util_Base_Controller
-{
+class MediaRepository_Util_Controller extends MediaRepository_Util_Base_Controller {
     // feel free to add your own convenience methods here
+
+    
+
 }

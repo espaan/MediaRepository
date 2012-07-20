@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MediaRepository.
  *
@@ -14,7 +15,13 @@
 /**
  * Installer implementation class
  */
-class MediaRepository_Installer extends MediaRepository_Base_Installer
-{
+class MediaRepository_Installer extends MediaRepository_Base_Installer {
+
     // feel free to extend the installer here
+    public function install() {
+        parent::install();
+        HookUtil::registerProviderBundles($this->version->getHookProviderBundles());
+        return true;
+    }
+
 }

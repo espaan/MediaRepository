@@ -1,5 +1,4 @@
 <?php
-
 /**
  * MediaRepository.
  *
@@ -41,7 +40,6 @@ class MediaRepository_Form_Handler_Admin_Medium_Edit extends MediaRepository_For
                         $this->incomingIds['repository'] = $repository->getID();
                     }
                     $this->_currRepo = $repository;
-                    break;
                 }
             }
         }

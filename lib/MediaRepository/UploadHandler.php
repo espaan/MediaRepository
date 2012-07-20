@@ -37,8 +37,10 @@ class MediaRepository_UploadHandler extends MediaRepository_Base_UploadHandler
         if (!in_array($objectType, $this->allowedObjectTypes)) {
             return $result;
         }
-    
+        
+        
         // perform validation
+        //This checked to make sure it is an allowed type, not too big and if images, of the right image types.
         if (!$this->validateFileUpload($objectType, $fileData[$fieldName], $fieldName)) {
             // skip this upload field
             return $result;
@@ -53,7 +55,7 @@ class MediaRepository_UploadHandler extends MediaRepository_Base_UploadHandler
         $fileName = implode('.', $fileNameParts);
     
         
-        // retrieve the final file name
+        //Get the repository information and find out where files should be storeed  TDP
         $repository = ModUtil::apiFunc('MediaRepository', 'selection', 'getEntity', array('ot' => 'repository', 'id' => $fileData['repository']));
         
         $basePath = $repository['storageDirectory'];
@@ -72,5 +74,42 @@ class MediaRepository_UploadHandler extends MediaRepository_Base_UploadHandler
         $result['metaData'] = $this->readMetaDataForFile($fileName, $basePath . $fileName);
     
         return $result;
+    }
+    
+     /**
+     * Determines the allowed file extensions for a given object type.
+      *  This is dependant upon the repostiory. Right here I have the base class implementation
+      * Which is only allowing a few image types. This needs to change I think.
+     *
+     * @param string $objectType Currently treated entity type.
+     * @param string $fieldName  Name of upload field.
+     * @param string $extension  Input file extension.
+     *
+     * @return array the list of allowed file extensions
+     */
+    protected function isAllowedFileExtension($objectType, $fieldName, $extension)
+    {
+        // determine the allowed extensions
+        $allowedExtensions = array();
+        switch ($objectType) {
+            case 'mediaHandler':
+                $allowedExtensions = array('gif', 'jpeg', 'jpg', 'png');
+                    break;
+            case 'medium':
+                $allowedExtensions = array('gif', 'jpeg', 'jpg', 'png');
+                    break;
+        }
+    
+        if (count($allowedExtensions) > 0) {
+            if (!in_array($extension, $allowedExtensions)) {
+                return false;
+            }
+        }
+    
+        if (in_array($extension, $this->forbiddenFileTypes)) {
+            return false;
+        }
+    
+        return true;
     }
 }

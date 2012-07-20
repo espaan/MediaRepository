@@ -17,4 +17,60 @@
 class MediaRepository_Version extends MediaRepository_Base_Version
 {
     // custom enhancements can go here
+    public function getMetaData()
+    {
+        $meta = array();
+        // the current module version
+        $meta['version']              = '1.0.0';
+        // the displayed name of the module
+        $meta['displayname']          = $this->__('MediaRepository');
+        // the module description
+        $meta['description']          = $this->__('The Media Repository module provides comprehensive means for file and media managing as well as powerful integration capabilities. It is the successor of several older modules, including Mediashare, MediaAttach, Downloads and other ones.');
+        //! url version of name, should be in lowercase without space
+        $meta['url']                  = $this->__('mediarepository');
+        // core requirement
+        $meta['core_min']             = '1.3.2'; // requires minimum 1.3.2 or later
+        $meta['core_max']             = '1.3.99'; // not ready for 1.4.0 yet
+
+        // define special capabilities of this module
+        $meta['capabilities'] = array(
+                          HookUtil::PROVIDER_CAPABLE => array('enabled' => true));
+/*,
+                          HookUtil::PROVIDER_CAPABLE => array('enabled' => true), // TODO: see #15
+                          'authentication' => array('version' => '1.0'),
+                          'profile'        => array('version' => '1.0', 'anotherkey' => 'anothervalue'),
+                          'message'        => array('version' => '1.0', 'anotherkey' => 'anothervalue')
+*/
+        
+        // permission schema
+        $meta['securityschema'] = array(
+            'MediaRepository::' => '::',
+            'MediaRepository::Ajax' => '::',
+            'MediaRepository:ItemListBlock:' => 'Block title::',
+            'MediaRepository:Repository:' => 'Repository ID::',
+            'MediaRepository:MediaHandler:' => 'MediaHandler ID::',
+            'MediaRepository:Medium:MediaHandler' => 'Medium ID:MediaHandler ID:',
+            'MediaRepository:Medium:' => 'Medium ID::',
+            'MediaRepository:Repository:Medium' => 'Repository ID:Medium ID:',
+            'MediaRepository:ThumbSize:' => 'ThumbSize ID::',
+            'MediaRepository:Repository:ThumbSize' => 'Repository ID:ThumbSize ID:',
+        );
+        // DEBUG: permission schema aspect ends
+
+
+        return $meta;
+    }
+
+    /**
+     * Define hook subscriber bundles.
+     */
+    protected function setupHookBundles()
+    {
+       $bundle = new Zikula_HookManager_ProviderBundle($this->name, 'subscriber.mediarepository.ui_hooks.repositories', 'ui_hooks', __('mediarepository Media Display Hooks'));
+       // Display hook to display a item from the interface.
+       $bundle->addServiceHandler('display_view', 'MediaRepository_HookHandler_Mhp', 'ui_view', 'MediaRepository.mhp');
+       $bundle->addServiceHandler('process_delete', 'MediaRepository_HookHandler_Mhp', 'ui_delete', 'MediaRepository.mhp');
+       $this->registerHookProviderBundle($bundle);  
+        
+    }
 }
